@@ -1,4 +1,4 @@
-package com.techtree.userinterface.model;
+package com.techtree.userinterface.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,14 +25,14 @@ public class User {
 	public String phonenumber;
 	private String password;
 	
-	private String confirmpassword;
-	
-	public String getConfirmpassword() {
-		return confirmpassword;
-	}
-	public void setConfirmpassword(String confirmpassword) {
-		this.confirmpassword = confirmpassword;
-	}
+//	private String confirmpassword;
+//	
+//	public String getConfirmpassword() {
+//		return confirmpassword;
+//	}
+//	public void setConfirmpassword(String confirmpassword) {
+//		this.confirmpassword = confirmpassword;
+//	}
 	public long getUser_id() {
 		return user_id;
 	}
