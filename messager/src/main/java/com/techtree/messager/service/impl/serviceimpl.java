@@ -93,12 +93,11 @@ public class serviceimpl implements ServiceInterface {
 
 	@Override
 	public ResponseEntity<Object> update(userBean user) {
-//		try {
-//		User userbean=repo.getById(user.getId());
-//		
-//			userbean.setOid();
-//			User userdeatail= repo.getById(i);
-//			
+		try {
+		User userbean=repo.getById(user.getId());
+		if(userbean.setOid(use));
+			
+			
 
 		return null;
 	}
