@@ -4,7 +4,7 @@ import java.io.UnsupportedEncodingException;
 
 import org.springframework.http.ResponseEntity;
 
-import com.techtree.userinterface.entity.Userbean;
+
 
 public interface userinterfaceService {
 

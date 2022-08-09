@@ -1,52 +1,52 @@
-package com.techtree.userinterface.service.impl;
+package com.techtree.messager.service.impl;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Base64;
 import java.util.Base64.Decoder;
 import java.util.Base64.Encoder;
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.techtree.userinterface.entity.User;
-
-import com.techtree.userinterface.repository.userRepository;
-import com.techtree.userinterface.service.userinterfaceService;
+import com.techtree.messager.Repository.MessagerRepo;
+import com.techtree.messager.entity.User;
+import com.techtree.messager.entity.userBean;
+import com.techtree.messager.service.ServiceInterface;
 
 @Service
-public class serviceimpl implements userinterfaceService {
+public class serviceimpl implements ServiceInterface {
 
 	@Autowired
-	userRepository repo;
+	MessagerRepo repo;
 
 	@Override
-	public ResponseEntity<Object> savedata(String data) {
+	public ResponseEntity<Object> registation(String phonenumber) {
 		try {
 			User u = new User();
 			Encoder encoder = Base64.getEncoder();
-			String encodedString = encoder.encodeToString(data.getBytes());
+			String encodedString = encoder.encodeToString(phonenumber.getBytes());
 			u.setPhonenumber(encodedString);
 			User i = repo.save(u);
-			return new ResponseEntity<Object>(i.getUser_id(), HttpStatus.OK);
+			return new ResponseEntity<Object>(i.getOid(), HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		return new ResponseEntity<Object>(HttpStatus.INTERNAL_SERVER_ERROR);
+
 	}
 
 	@Override
-	public ResponseEntity<Object> setpin(long id, String pwd, String Confirmpass) throws UnsupportedEncodingException {
+	public ResponseEntity<Object> setpin(long id, String password, String confirmPassword) {
 		try {
 			if (repo.findById(id).isPresent()) {
 				User u = repo.getById(id);
 				System.out.println(u.getPassword());
-				if (u.getPassword() == null && pwd.equals(pwd)) {
+				if (u.getPassword() == null && password.equals(password)) {
 					Encoder encoder = Base64.getEncoder();
-					String encodedString = encoder.encodeToString(pwd.getBytes("UTF-8"));
+					String encodedString = encoder.encodeToString(password.getBytes("UTF-8"));
 					u.setPassword(encodedString);
 					User saved = repo.save(u);
 					return new ResponseEntity<Object>(" succesfully set pin ", HttpStatus.OK);
@@ -60,10 +60,11 @@ public class serviceimpl implements userinterfaceService {
 			e.printStackTrace();
 		}
 		return new ResponseEntity<Object>(HttpStatus.INTERNAL_SERVER_ERROR);
+
 	}
 
 	@Override
-	public ResponseEntity<Object> verfiy(long id, String pwd) {
+	public ResponseEntity<Object> verfiy(long id, String password) {
 		try {
 			if (repo.findById(id).isPresent()) {
 				User u = repo.getById(id);
@@ -75,7 +76,7 @@ public class serviceimpl implements userinterfaceService {
 				System.out.println(decodedbytespass);
 				String Dbpass = new String(decodedbytespass, "UTF-8");
 				System.out.println(Dbpass);
-				if (Dbpass.equals(pwd)) {
+				if (Dbpass.equals(password)) {
 					return new ResponseEntity<Object>("login succefully", HttpStatus.OK);
 				} else {
 					return new ResponseEntity<Object>(" pass is invalid login fails", HttpStatus.BAD_REQUEST);
@@ -87,20 +88,35 @@ public class serviceimpl implements userinterfaceService {
 			e.printStackTrace();
 		}
 		return new ResponseEntity<Object>(HttpStatus.INTERNAL_SERVER_ERROR);
+
 	}
 
 	@Override
-	public ResponseEntity<Object> getlist() {
+	public ResponseEntity<Object> update(userBean user) {
+//		try {
+//		User userbean=repo.getById(user.getId());
+//		
+//			userbean.setOid();
+//			User userdeatail= repo.getById(i);
+//			
+
+		return null;
+	}
+
+	@Override
+	public ResponseEntity<Object> view(Long id) {
+		User userdata = repo.findById(id).get();
 		try {
-			List<User> u = repo.findAll();
-			if (!u.isEmpty()) {
-				return new ResponseEntity<Object>(u, HttpStatus.OK);
+			if (userdata != null) {
+				return new ResponseEntity<Object>(userdata, HttpStatus.OK);
 			} else {
-				return new ResponseEntity<Object>("empty", HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<Object>("not found", HttpStatus.BAD_REQUEST);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 		return new ResponseEntity<Object>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
+
 }

@@ -9,21 +9,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-
+import com.techtree.userinterface.entity.User;
 import com.techtree.userinterface.entity.UserBean;
-import com.techtree.userinterface.entity.Userbean;
 import com.techtree.userinterface.service.userinterfaceService;
 import com.techtree.userinterface.validation.Passvalidation;
 import com.techtree.userinterface.validation.phoneValidation;
 
-@Controller
+@RestController
 @RequestMapping("/home")
 public class usercontroller {
 
@@ -38,22 +36,21 @@ public class usercontroller {
 	@GetMapping("/list")
 	public ResponseEntity<Object> getlist() {
 		return service.getlist();
-
 	}
 
 	@PostMapping(value = "/regitration", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE })
-	public ResponseEntity<Object> Registration(@RequestBody UserBean data, BindingResult result) {
+	public ResponseEntity<Object> Registration(@RequestBody User data, BindingResult result) {
 
 			phonevalidate.validate(data, result);
 			if (result.hasErrors()) {
 				return new ResponseEntity<>(result.getAllErrors(), HttpStatus.BAD_REQUEST);
 			}
-			
+		
 			return	service.savedata(data.getPhonenumber());	
 	}
 
 	@PutMapping("/setpin")
-	public ResponseEntity<Object> setPin( @RequestBody Userbean pwd,
+	public ResponseEntity<Object> setPin( @RequestBody UserBean pwd,
 			 BindingResult result) throws UnsupportedEncodingException {
 			try {
 			passvalidate.validate(pwd, result);
@@ -71,10 +68,10 @@ public class usercontroller {
 	
 
 	@GetMapping("/verfiy")
-	public ResponseEntity<Object> verfiy(@RequestParam long id, @RequestParam String pwd) {
+	public ResponseEntity<Object> verfiy(@RequestBody User login) {
 		
-		return service.verfiy(id, pwd);
-
+		return service.verfiy(login.getUser_id(), login.getPassword());
+		
 	}
 
 }

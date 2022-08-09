@@ -26,7 +26,7 @@ public class User {
 	private String password;
 	
 //	private String confirmpassword;
-//	
+
 //	public String getConfirmpassword() {
 //		return confirmpassword;
 //	}

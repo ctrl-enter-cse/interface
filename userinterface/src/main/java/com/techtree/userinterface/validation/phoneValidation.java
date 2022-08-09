@@ -16,9 +16,7 @@ public class phoneValidation  implements Validator{
 	
 	@Override
 	public boolean supports(Class<?> clazz) {
-		// TODO Auto-generated method stub
-		return UserBean.class.isAssignableFrom(clazz);
-		
+		return UserBean.class.isAssignableFrom(clazz);		
 	}
 
 	@Override
@@ -32,10 +30,5 @@ public class phoneValidation  implements Validator{
 	}
 
 	
-//	public void validate(Object  target, Errors errors) {
-//		ValidationUtils.rejectIfEmpty(errors, "phonenumber", "phonenumber.empty");
-//        if (target..matches(Phone_format)) {
-//        	errors.rejectValue("Phonenumber", "not matching");
-//        } 
-//	}
+
 }

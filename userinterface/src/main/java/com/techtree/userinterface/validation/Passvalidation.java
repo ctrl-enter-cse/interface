@@ -7,7 +7,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import com.techtree.userinterface.entity.Userbean;
+import com.techtree.userinterface.entity.UserBean;
 
 @Component
 public class Passvalidation implements Validator{
@@ -16,7 +16,7 @@ public class Passvalidation implements Validator{
 	@Override
 	public boolean supports(Class<?> clazz) {
 		// TODO Auto-generated method stub
-		return Userbean.class.equals(clazz);
+		return UserBean.class.equals(clazz);
 	}
 	
 	@Override
@@ -24,7 +24,7 @@ public class Passvalidation implements Validator{
 		ValidationUtils.rejectIfEmpty(errors, "id", "id.empty");
 		ValidationUtils.rejectIfEmpty(errors, "pwd", "pwd.empty");
 		ValidationUtils.rejectIfEmpty(errors, "confirmpass", "confirmpass.empty");
-		Userbean p = (Userbean) target;
+		UserBean p = (UserBean) target;
         if (p.getPwd().matches(pass_format)!=true){
         	System.out.println("-------------------");
         	System.out.println(p.getPwd().matches(pass_format));
