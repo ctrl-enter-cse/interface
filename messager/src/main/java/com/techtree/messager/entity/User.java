@@ -1,5 +1,7 @@
 package com.techtree.messager.entity;
 
+
+import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name="user")
@@ -22,9 +26,16 @@ public class User {
 	@Column(name="PASSWOORD")
 	private String password;
 	
-	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "user")
+	@CreationTimestamp
+	private Date creationtime; 
+	
+	@UpdateTimestamp
+	private Date Modification;
+	
+	@OneToOne(cascade = CascadeType.ALL,mappedBy = "user",fetch =  FetchType.LAZY)
 	private UserProfile userprofile;
 
+	
 	public long getOid() {
 		return oid;
 	}

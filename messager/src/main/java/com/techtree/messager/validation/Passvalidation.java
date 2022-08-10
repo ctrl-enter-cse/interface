@@ -9,12 +9,11 @@ import com.techtree.messager.entity.userBean;
 
 @Component
 public class Passvalidation implements Validator {
-	private static final String pass_Format="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,15}$";
-//			"^[((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]))((?=.*[0-9])(?=.*[a-z])(?=.*[@$]))((?=.*[@$])(?=.*[a-z])(?=.*[A-Z]))](?=\\S+$).{8,20}$";
+//	private static final String pass_Format=;
+
 
 	@Override
-	public boolean supports(Class<?> clazz) {
-		
+	public boolean supports(Class<?> clazz) {	
 		return userBean.class.isAssignableFrom(clazz);
 	}
 
@@ -22,9 +21,9 @@ public class Passvalidation implements Validator {
 	public  void validate(Object target, Errors errors) {
 		ValidationUtils.rejectIfEmpty(errors,"id", "id is empty");
 		ValidationUtils.rejectIfEmpty(errors, "password", "password is empty");
-//		ValidationUtils.rejectIfEmpty(errors,"ConfirmPassword", "ConfirmPassword is empty");
+		ValidationUtils.rejectIfEmpty(errors,"ConfirmPassword", "ConfirmPassword is empty");
 		userBean u= (userBean)target;
-		if(!u.getPassword().matches(pass_Format)){
+		if(!u.getPassword().matches("^((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])|(?=.*[@&%])(?=.*[a-z])(?=.*[A-Z])|(?=.*[0-9])(?=.*[a-z])(?=.*[@$&-])|(?=.*[0-9])(?=.*[A-Z])(?=.*[@$&-]))(?=\\S+$).{8,20}$")){
 			errors.rejectValue("password", "not matching");
 		}
 

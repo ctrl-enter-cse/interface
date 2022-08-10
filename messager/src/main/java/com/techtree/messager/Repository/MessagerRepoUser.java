@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import com.techtree.messager.entity.User;
 
 @Repository
-public interface MessagerRepo extends JpaRepository<User, Long> {
+public interface MessagerRepoUser extends JpaRepository<User, Long> {
 
 }

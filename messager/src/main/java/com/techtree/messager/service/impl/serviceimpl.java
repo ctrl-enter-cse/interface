@@ -5,31 +5,41 @@ import java.util.Base64.Decoder;
 import java.util.Base64.Encoder;
 import java.util.Optional;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.techtree.messager.Repository.MessagerRepo;
+import com.techtree.messager.Repository.MessagerRepoUser;
+import com.techtree.messager.Repository.UserProfileRepo;
 import com.techtree.messager.entity.User;
-import com.techtree.messager.entity.userBean;
+import com.techtree.messager.entity.UserProfile;
+import com.techtree.messager.entity.UserProfileBean;
+import com.techtree.messager.entity.Userdetail;
 import com.techtree.messager.service.ServiceInterface;
 
 @Service
 public class serviceimpl implements ServiceInterface {
 
 	@Autowired
-	MessagerRepo repo;
+	MessagerRepoUser userrepo;
+	
+	@Autowired
+	UserProfileRepo uprofilerepo;
 
 	@Override
 	public ResponseEntity<Object> registation(String phonenumber) {
+		JSONObject response = new JSONObject();
 		try {
-			User u = new User();
-			Encoder encoder = Base64.getEncoder();
-			String encodedString = encoder.encodeToString(phonenumber.getBytes());
-			u.setPhonenumber(encodedString);
-			User i = repo.save(u);
-			return new ResponseEntity<Object>(i.getOid(), HttpStatus.OK);
+			User user = new User();
+			user.setPhonenumber(phonenumber);
+			UserProfile userpro= new UserProfile();
+			user.setUserprofile(userpro);
+			userpro.setUser(user);
+			User i = userrepo.save(user);
+			response.put("user-id", i.getOid());
+			return new ResponseEntity<Object>(response, HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -41,14 +51,15 @@ public class serviceimpl implements ServiceInterface {
 	@Override
 	public ResponseEntity<Object> setpin(long id, String password, String confirmPassword) {
 		try {
-			if (repo.findById(id).isPresent()) {
-				User u = repo.getById(id);
-				System.out.println(u.getPassword());
-				if (u.getPassword() == null && password.equals(password)) {
+			 Optional<User> usercheck=userrepo.findById(id);
+			if (usercheck.isPresent()) {	
+				User user=usercheck.get();
+				System.out.println(user.getPassword());
+				if (user.getPassword() == null && password.equals(password)) {
 					Encoder encoder = Base64.getEncoder();
 					String encodedString = encoder.encodeToString(password.getBytes("UTF-8"));
-					u.setPassword(encodedString);
-					User saved = repo.save(u);
+					user.setPassword(encodedString);
+					User saved = userrepo.save(user);
 					return new ResponseEntity<Object>(" succesfully set pin ", HttpStatus.OK);
 				} else {
 					return new ResponseEntity<Object>("already regitrated", HttpStatus.FOUND);
@@ -66,8 +77,8 @@ public class serviceimpl implements ServiceInterface {
 	@Override
 	public ResponseEntity<Object> verfiy(long id, String password) {
 		try {
-			if (repo.findById(id).isPresent()) {
-				User u = repo.getById(id);
+			if (userrepo.findById(id).isPresent()) {
+				User u = userrepo.getById(id);
 				String encoded = u.getPassword();
 				System.out.println(encoded);
 				Decoder decoder = Base64.getDecoder();
@@ -82,7 +93,7 @@ public class serviceimpl implements ServiceInterface {
 					return new ResponseEntity<Object>(" pass is invalid login fails", HttpStatus.BAD_REQUEST);
 				}
 			} else {
-				return new ResponseEntity<Object>(" id not found", HttpStatus.BAD_REQUEST);
+				return new ResponseEntity<Object>("id not found", HttpStatus.BAD_REQUEST);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -92,24 +103,62 @@ public class serviceimpl implements ServiceInterface {
 	}
 
 	@Override
-	public ResponseEntity<Object> update(userBean user) {
+	public ResponseEntity<Object> update(UserProfileBean user) {
+		JSONObject json = new JSONObject();
 		try {
-		User userbean=repo.getById(user.getId());
-		if(userbean.setOid(use));
+			Optional<User> userdata = userrepo.findById(user.getId());
+			if (userdata.isPresent()) {
+				UserProfile userprofile = uprofilerepo.getById(user.getId());
+				if (user.getFirst_name() != null) {
+					userprofile.setFirst_name(user.getFirst_name());
+				}
+				if (user.getLast_name() != null) {
+					userprofile.setLast_name(user.getLast_name());
+				}
+				if (user.getEmail() != null) {
+					userprofile.setEmail(user.getEmail());
+				}
+				System.out.println(userprofile);
+	
+				uprofilerepo.save(userprofile);
+				json.put("updated profile :", userprofile);
+				json.put("status:","success");
+				json.put("message:","updated");
+				return new ResponseEntity<Object>(json, HttpStatus.OK);
+		
+				}else {
+				json.put("user","user not found");
+				json.put("status:","fail");
+				json.put("message:","failed");
+				return new ResponseEntity<Object>(json, HttpStatus.OK);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Object>(HttpStatus.INTERNAL_SERVER_ERROR);
 			
-			
-
-		return null;
 	}
 
 	@Override
 	public ResponseEntity<Object> view(Long id) {
-		User userdata = repo.findById(id).get();
+		JSONObject json = new JSONObject();
 		try {
-			if (userdata != null) {
-				return new ResponseEntity<Object>(userdata, HttpStatus.OK);
+			Optional<UserProfile> userdata = uprofilerepo.findById(id);
+			if (userdata.isPresent()){
+				Userdetail response = new Userdetail();
+				UserProfile userprofiledata = userdata.get();
+				if(userprofiledata!=null) {
+				response.setFirstName(userprofiledata.getFirst_name());
+				response.setLastName(userprofiledata.getLast_name());
+				response.setEmail(userprofiledata.getEmail());
+				return new ResponseEntity<Object>(response, HttpStatus.OK);
 			} else {
-				return new ResponseEntity<Object>("not found", HttpStatus.BAD_REQUEST);
+				json.put("user profile data", "not found");
+				return new ResponseEntity<Object>(json, HttpStatus.BAD_REQUEST);
+			}
+			}else {
+				json.put("user invalid id ", "not found");
+				return new ResponseEntity<Object>(json, HttpStatus.BAD_REQUEST);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

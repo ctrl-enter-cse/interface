@@ -1,25 +1,30 @@
 package com.techtree.messager.entity;
 
 
-
+import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
-
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name="userProfile")
 public class UserProfile {
+	
 	@Id
-	@GenericGenerator(name = "ProfileIdGenerator", strategy = "foreign",parameters = @Parameter(name = "property",value = "User"))
-	@GeneratedValue(generator = "ProfileIdGenerator")
 	@Column(name="OID")
-	private Long id;
+	@GeneratedValue(generator = "ProfileIdGenerator")
+	@GenericGenerator(name = "ProfileIdGenerator", strategy = "foreign",parameters = @Parameter(name ="property",value = "user"))
+	private Long oid;
 	
 	@Column(name="FIRST_NAME")
 	private String First_name;
@@ -30,15 +35,30 @@ public class UserProfile {
 	@Column(name="Email")
 	private String email;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@PrimaryKeyJoinColumn
 	private User user;
+	
+	@CreationTimestamp
+	private Date creationtime; 
+	
+	@UpdateTimestamp
+	private Date Updatation;
 
-	public Long getId() {
-		return id;
+	public Long getOid() {
+		return oid;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setOid(Long oid) {
+		this.oid = oid;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public String getFirst_name() {
