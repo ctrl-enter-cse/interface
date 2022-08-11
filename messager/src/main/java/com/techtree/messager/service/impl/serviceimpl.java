@@ -3,6 +3,7 @@ package com.techtree.messager.service.impl;
 import java.util.Base64;
 import java.util.Base64.Decoder;
 import java.util.Base64.Encoder;
+import java.util.List;
 import java.util.Optional;
 
 import org.json.simple.JSONObject;
@@ -32,6 +33,8 @@ public class serviceimpl implements ServiceInterface {
 	public ResponseEntity<Object> registation(String phonenumber) {
 		JSONObject response = new JSONObject();
 		try {
+			List<User>	list=userrepo.findByPhonenumber(phonenumber);
+			if(list.isEmpty()) {
 			User user = new User();
 			user.setPhonenumber(phonenumber);
 			UserProfile userpro= new UserProfile();
@@ -39,7 +42,14 @@ public class serviceimpl implements ServiceInterface {
 			userpro.setUser(user);
 			User i = userrepo.save(user);
 			response.put("user-id", i.getOid());
+			response.put("status","success");
 			return new ResponseEntity<Object>(response, HttpStatus.OK);
+			}else {
+//				response.put("already regiterd","try with other number");
+				response.put("status","failed");
+				response.put("message","try with other number");
+				return new ResponseEntity<Object>(response, HttpStatus.FOUND);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -59,7 +69,7 @@ public class serviceimpl implements ServiceInterface {
 					Encoder encoder = Base64.getEncoder();
 					String encodedString = encoder.encodeToString(password.getBytes("UTF-8"));
 					user.setPassword(encodedString);
-					User saved = userrepo.save(user);
+					userrepo.save(user);
 					return new ResponseEntity<Object>(" succesfully set pin ", HttpStatus.OK);
 				} else {
 					return new ResponseEntity<Object>("already regitrated", HttpStatus.FOUND);
@@ -78,13 +88,13 @@ public class serviceimpl implements ServiceInterface {
 	public ResponseEntity<Object> verfiy(long id, String password) {
 		try {
 			if (userrepo.findById(id).isPresent()) {
-				User u = userrepo.getById(id);
-				String encoded = u.getPassword();
-				System.out.println(encoded);
+				User user = userrepo.getById(id);
+				String encoded = user.getPassword();
+//				System.out.println(encoded);
 				Decoder decoder = Base64.getDecoder();
 				byte[] decodedbytespass = decoder.decode(encoded);
 				System.out.println("---------------");
-				System.out.println(decodedbytespass);
+//				System.out.println(decodedbytespass);
 				String Dbpass = new String(decodedbytespass, "UTF-8");
 				System.out.println(Dbpass);
 				if (Dbpass.equals(password)) {
@@ -118,8 +128,6 @@ public class serviceimpl implements ServiceInterface {
 				if (user.getEmail() != null) {
 					userprofile.setEmail(user.getEmail());
 				}
-				System.out.println(userprofile);
-	
 				uprofilerepo.save(userprofile);
 				json.put("updated profile :", userprofile);
 				json.put("status:","success");

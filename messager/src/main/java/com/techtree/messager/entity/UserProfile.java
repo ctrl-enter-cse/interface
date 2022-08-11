@@ -16,6 +16,8 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name="userProfile")
 public class UserProfile {
@@ -35,6 +37,7 @@ public class UserProfile {
 	@Column(name="Email")
 	private String email;
 	
+	@JsonIgnore
 	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	@PrimaryKeyJoinColumn
 	private User user;

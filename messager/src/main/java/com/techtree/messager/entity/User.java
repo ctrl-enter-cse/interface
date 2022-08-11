@@ -22,7 +22,7 @@ public class User {
 	@Column(name="OID")
 	private long oid;
 	@Column(name="PHONENUMBER")
-	private String Phonenumber;
+	private String phonenumber;
 	@Column(name="PASSWOORD")
 	private String password;
 	
@@ -45,11 +45,11 @@ public class User {
 	}
 
 	public String getPhonenumber() {
-		return Phonenumber;
+		return phonenumber;
 	}
 
 	public void setPhonenumber(String phonenumber) {
-		Phonenumber = phonenumber;
+		this.phonenumber = phonenumber;
 	}
 
 	public String getPassword() {

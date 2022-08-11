@@ -6,4 +6,5 @@ import com.techtree.messager.entity.UserProfile;
 
 public interface UserProfileRepo extends JpaRepository<UserProfile, Long> {
 
+	
 }

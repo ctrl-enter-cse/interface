@@ -1,10 +1,8 @@
 package com.techtree.messager.controller;
 
 import java.io.UnsupportedEncodingException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.techtree.messager.entity.User;
 import com.techtree.messager.entity.UserProfileBean;
 import com.techtree.messager.entity.userBean;
@@ -76,8 +73,7 @@ public class MessagerController {
 	public ResponseEntity<Object> update(@RequestBody UserProfileBean user) {
 		return service.update(user);
 	}
-	
-	
+
 	@PostMapping("/view/{id}")
 	public ResponseEntity<Object> view(@PathVariable("id") Long id){
 		return service.view(id);
