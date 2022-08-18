@@ -24,7 +24,7 @@ public class Passvalidation implements Validator {
 		ValidationUtils.rejectIfEmpty(errors,"ConfirmPassword", "ConfirmPassword is empty");
 		userBean u= (userBean)target;
 		if(!u.getPassword().matches("^((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])|(?=.*[@&%])(?=.*[a-z])(?=.*[A-Z])|(?=.*[0-9])(?=.*[a-z])(?=.*[@$&-])|(?=.*[0-9])(?=.*[A-Z])(?=.*[@$&-]))(?=\\S+$).{8,20}$")){
-			errors.rejectValue("password", "not matching");
+			errors.rejectValue("password", " pattern not matching");
 		}
 
 	}

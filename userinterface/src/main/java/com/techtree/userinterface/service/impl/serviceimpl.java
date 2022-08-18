@@ -6,13 +6,13 @@ import java.util.Base64.Decoder;
 import java.util.Base64.Encoder;
 import java.util.List;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.techtree.userinterface.entity.User;
-
 import com.techtree.userinterface.repository.userRepository;
 import com.techtree.userinterface.service.userinterfaceService;
 
@@ -91,10 +91,13 @@ public class serviceimpl implements userinterfaceService {
 
 	@Override
 	public ResponseEntity<Object> getlist() {
+		JSONObject json= new JSONObject();
 		try {
 			List<User> u = repo.findAll();
 			if (!u.isEmpty()) {
-				return new ResponseEntity<Object>(u, HttpStatus.OK);
+				json.put("value", u);
+			
+				return new ResponseEntity<Object>(json, HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Object>("empty", HttpStatus.BAD_REQUEST);
 			}

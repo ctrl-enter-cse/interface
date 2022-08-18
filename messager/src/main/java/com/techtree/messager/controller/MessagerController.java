@@ -3,6 +3,7 @@ package com.techtree.messager.controller;
 import java.io.UnsupportedEncodingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -69,7 +70,7 @@ public class MessagerController {
 	}
 
 //	, produces = MediaType.APPLICATION_JSON_UTF8_VALUE 
-	@PutMapping("/update")
+	@PutMapping(value="/update", produces = MediaType.APPLICATION_JSON_UTF8_VALUE )
 	public ResponseEntity<Object> update(@RequestBody UserProfileBean user) {
 		return service.update(user);
 	}
@@ -79,4 +80,6 @@ public class MessagerController {
 		return service.view(id);
 	}
 
+	
+	
 }

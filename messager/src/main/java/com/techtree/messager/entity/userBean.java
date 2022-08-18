@@ -3,7 +3,7 @@ package com.techtree.messager.entity;
 public class userBean {
 
 	private long id;
-	private String phonenumber;
+	private String phonenumber="";
 	private String password;
 	private String ConfirmPassword;
 	

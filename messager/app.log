@@ -1,0 +1,262 @@
+2022-08-18 10:19:09,715 INFO com.techtree.messager.MessagerApplication [main] Starting MessagerApplication using Java 17.0.2 on ttblrlinsys-089 with PID 5101 (/home/prasannaacharya/git/interface/messager/target/classes started by prasannaacharya in /home/prasannaacharya/git/interface/messager)
+2022-08-18 10:19:09,717 INFO com.techtree.messager.MessagerApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-18 10:19:13,140 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-18 10:19:13,396 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 150 ms. Found 2 JPA repository interfaces.
+2022-08-18 10:19:15,143 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7091 (http)
+2022-08-18 10:19:15,157 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:19:15,158 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-18 10:19:15,158 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-18 10:19:15,301 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-18 10:19:15,301 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 5439 ms
+2022-08-18 10:19:16,236 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-18 10:19:16,587 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-18 10:19:18,192 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-18 10:19:18,971 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-18 10:19:20,466 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-18 10:19:20,569 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-18 10:19:22,579 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-18 10:19:22,584 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 10:19:23,443 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-18 10:19:25,192 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:19:25,221 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7091 (http) with context path ''
+2022-08-18 10:19:25,227 INFO com.techtree.messager.MessagerApplication [main] Started MessagerApplication in 17.017 seconds (JVM running for 19.162)
+2022-08-18 10:20:09,188 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-7091-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-18 10:20:09,188 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-08-18 10:20:09,189 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-2] Completed initialization in 1 ms
+2022-08-18 10:20:09,268 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-2] user data{"id":7,"first_name":"PrasannaKumar","last_name":"Acharya","email":"prasanna@gmail.com","user":null}
+2022-08-18 10:20:09,329 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-2] UserProfile [First_name=PrasannaKumar, Last_name=Acharya, email=prasanna@gmail.com]
+2022-08-18 10:20:09,337 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [http-nio-7091-exec-2] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class org.json.JSONObject] with preset Content-Type 'null']
+2022-08-18 10:20:20,656 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-4] user data{"id":7,"first_name":"PrasannaKumar","last_name":"Acharya","email":"prasanna@gmail.com","user":null}
+2022-08-18 10:20:20,664 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-4] UserProfile [First_name=PrasannaKumar, Last_name=Acharya, email=prasanna@gmail.com]
+2022-08-18 10:20:20,665 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [http-nio-7091-exec-4] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class org.json.JSONObject] with preset Content-Type 'null']
+2022-08-18 10:21:09,951 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(5)-127.0.0.1] Application shutdown requested.
+2022-08-18 10:21:09,963 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [RMI TCP Connection(5)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 10:21:09,965 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(5)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2022-08-18 10:21:09,971 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(5)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2022-08-18 10:21:12,823 INFO com.techtree.messager.MessagerApplication [main] Starting MessagerApplication using Java 17.0.2 on ttblrlinsys-089 with PID 6343 (/home/prasannaacharya/git/interface/messager/target/classes started by prasannaacharya in /home/prasannaacharya/git/interface/messager)
+2022-08-18 10:21:12,825 INFO com.techtree.messager.MessagerApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-18 10:21:13,243 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-18 10:21:13,278 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2022-08-18 10:21:13,650 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7091 (http)
+2022-08-18 10:21:13,657 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:21:13,657 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-18 10:21:13,657 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-18 10:21:13,739 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-18 10:21:13,739 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 884 ms
+2022-08-18 10:21:13,860 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-18 10:21:13,888 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-18 10:21:13,983 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-18 10:21:14,054 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-18 10:21:14,287 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-18 10:21:14,297 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-18 10:21:14,693 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-18 10:21:14,698 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 10:21:14,970 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-18 10:21:15,244 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:21:15,255 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7091 (http) with context path ''
+2022-08-18 10:21:15,262 INFO com.techtree.messager.MessagerApplication [main] Started MessagerApplication in 2.675 seconds (JVM running for 3.257)
+2022-08-18 10:21:19,076 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-7091-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-18 10:21:19,076 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-08-18 10:21:19,078 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-2] Completed initialization in 1 ms
+2022-08-18 10:21:19,144 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-2] user data{"id":7,"first_name":"PrasannaKumar","last_name":"Acharya","email":"prasanna@gmail.com","user":null}
+2022-08-18 10:21:19,184 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-2] UserProfile [First_name=PrasannaKumar, Last_name=Acharya, email=prasanna@gmail.com]
+2022-08-18 10:21:19,192 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [http-nio-7091-exec-2] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class org.json.JSONObject] with preset Content-Type 'null']
+2022-08-18 10:22:00,107 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(4)-127.0.0.1] Application shutdown requested.
+2022-08-18 10:22:00,119 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [RMI TCP Connection(4)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 10:22:00,121 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2022-08-18 10:22:00,127 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(4)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2022-08-18 10:22:02,519 INFO com.techtree.messager.MessagerApplication [main] Starting MessagerApplication using Java 17.0.2 on ttblrlinsys-089 with PID 6538 (/home/prasannaacharya/git/interface/messager/target/classes started by prasannaacharya in /home/prasannaacharya/git/interface/messager)
+2022-08-18 10:22:02,521 INFO com.techtree.messager.MessagerApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-18 10:22:02,921 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-18 10:22:02,956 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2022-08-18 10:22:03,319 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7091 (http)
+2022-08-18 10:22:03,326 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:22:03,326 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-18 10:22:03,326 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-18 10:22:03,398 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-18 10:22:03,398 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 846 ms
+2022-08-18 10:22:03,522 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-18 10:22:03,552 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-18 10:22:03,655 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-18 10:22:03,722 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-18 10:22:03,988 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-18 10:22:03,999 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-18 10:22:04,431 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-18 10:22:04,436 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 10:22:04,693 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-18 10:22:04,942 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:22:04,953 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7091 (http) with context path ''
+2022-08-18 10:22:04,960 INFO com.techtree.messager.MessagerApplication [main] Started MessagerApplication in 2.687 seconds (JVM running for 3.301)
+2022-08-18 10:22:09,235 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-7091-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-18 10:22:09,235 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-08-18 10:22:09,237 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-1] Completed initialization in 2 ms
+2022-08-18 10:22:09,307 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-1] user data{"id":7,"first_name":"PrasannaKumar","last_name":"Acharya","email":"prasanna@gmail.com","user":null}
+2022-08-18 10:22:09,359 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-1] UserProfile [First_name=PrasannaKumar, Last_name=Acharya, email=prasanna@gmail.com]
+2022-08-18 10:22:09,369 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [http-nio-7091-exec-1] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class org.json.JSONObject] with preset Content-Type 'null']
+2022-08-18 10:24:26,878 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(6)-127.0.0.1] Application shutdown requested.
+2022-08-18 10:24:26,887 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [RMI TCP Connection(6)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 10:24:26,888 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(6)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2022-08-18 10:24:26,893 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(6)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2022-08-18 10:24:29,029 INFO com.techtree.messager.MessagerApplication [main] Starting MessagerApplication using Java 17.0.2 on ttblrlinsys-089 with PID 6744 (/home/prasannaacharya/git/interface/messager/target/classes started by prasannaacharya in /home/prasannaacharya/git/interface/messager)
+2022-08-18 10:24:29,030 INFO com.techtree.messager.MessagerApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-18 10:24:29,447 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-18 10:24:29,482 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2022-08-18 10:24:29,859 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7091 (http)
+2022-08-18 10:24:29,866 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:24:29,866 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-18 10:24:29,867 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-18 10:24:29,950 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-18 10:24:29,950 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 888 ms
+2022-08-18 10:24:30,077 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-18 10:24:30,106 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-18 10:24:30,207 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-18 10:24:30,277 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-18 10:24:30,518 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-18 10:24:30,529 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-18 10:24:30,907 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-18 10:24:30,912 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 10:24:31,161 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-18 10:24:31,418 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:24:31,429 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7091 (http) with context path ''
+2022-08-18 10:24:31,436 INFO com.techtree.messager.MessagerApplication [main] Started MessagerApplication in 2.659 seconds (JVM running for 3.246)
+2022-08-18 10:24:41,110 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-7091-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-18 10:24:41,110 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-08-18 10:24:41,111 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-2] Completed initialization in 1 ms
+2022-08-18 10:24:41,190 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-2] user data{"id":7,"first_name":"PrasannaKumar","last_name":"Acharya","email":"prasanna@gmail.com","user":null}
+2022-08-18 10:24:41,241 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-2] {"status:":"success","message:":"updated","last_name":"Acharya","oid":7,"first_name":"PrasannaKumar","email":"prasanna@gmail.com"}
+2022-08-18 10:24:41,248 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [http-nio-7091-exec-2] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class org.json.JSONObject] with preset Content-Type 'null']
+2022-08-18 10:25:39,745 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(3)-127.0.0.1] Application shutdown requested.
+2022-08-18 10:25:39,754 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [RMI TCP Connection(3)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 10:25:39,755 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2022-08-18 10:25:39,759 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(3)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2022-08-18 10:25:41,929 INFO com.techtree.messager.MessagerApplication [main] Starting MessagerApplication using Java 17.0.2 on ttblrlinsys-089 with PID 6900 (/home/prasannaacharya/git/interface/messager/target/classes started by prasannaacharya in /home/prasannaacharya/git/interface/messager)
+2022-08-18 10:25:41,931 INFO com.techtree.messager.MessagerApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-18 10:25:42,364 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-18 10:25:42,398 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2022-08-18 10:25:42,743 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7091 (http)
+2022-08-18 10:25:42,758 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:25:42,759 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-18 10:25:42,759 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-18 10:25:42,834 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-18 10:25:42,834 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 874 ms
+2022-08-18 10:25:42,952 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-18 10:25:42,977 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-18 10:25:43,071 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-18 10:25:43,134 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-18 10:25:43,357 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-18 10:25:43,368 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-18 10:25:43,769 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-18 10:25:43,775 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 10:25:44,043 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-18 10:25:44,307 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:25:44,319 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7091 (http) with context path ''
+2022-08-18 10:25:44,326 INFO com.techtree.messager.MessagerApplication [main] Started MessagerApplication in 2.638 seconds (JVM running for 3.212)
+2022-08-18 10:25:49,343 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-7091-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-18 10:25:49,344 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-08-18 10:25:49,344 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-2] Completed initialization in 0 ms
+2022-08-18 10:25:49,407 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-2] user data{"id":7,"first_name":"PrasannaKumar","last_name":"Acharya","email":"prasanna@gmail.com","user":null}
+2022-08-18 10:25:49,448 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-2] {"status:":"success","message:":"updated","last_name":"Acharya","oid":7,"first_name":"PrasannaKumar","email":"prasanna@gmail.com"}
+2022-08-18 10:25:49,455 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [http-nio-7091-exec-2] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter for [class org.json.JSONObject] with preset Content-Type 'null']
+2022-08-18 10:26:10,521 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(2)-127.0.0.1] Application shutdown requested.
+2022-08-18 10:26:10,531 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [RMI TCP Connection(2)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 10:26:10,532 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(2)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2022-08-18 10:26:10,538 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(2)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2022-08-18 10:26:12,714 INFO com.techtree.messager.MessagerApplication [main] Starting MessagerApplication using Java 17.0.2 on ttblrlinsys-089 with PID 7026 (/home/prasannaacharya/git/interface/messager/target/classes started by prasannaacharya in /home/prasannaacharya/git/interface/messager)
+2022-08-18 10:26:12,715 INFO com.techtree.messager.MessagerApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-18 10:26:13,113 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-18 10:26:13,145 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 27 ms. Found 2 JPA repository interfaces.
+2022-08-18 10:26:13,470 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7091 (http)
+2022-08-18 10:26:13,476 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:26:13,476 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-18 10:26:13,476 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-18 10:26:13,540 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-18 10:26:13,540 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 793 ms
+2022-08-18 10:26:13,647 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-18 10:26:13,673 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-18 10:26:13,764 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-18 10:26:13,822 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-18 10:26:14,064 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-18 10:26:14,075 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-18 10:26:14,478 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-18 10:26:14,485 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 10:26:14,739 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-18 10:26:14,997 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:26:15,008 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7091 (http) with context path ''
+2022-08-18 10:26:15,014 INFO com.techtree.messager.MessagerApplication [main] Started MessagerApplication in 2.542 seconds (JVM running for 3.153)
+2022-08-18 10:26:17,900 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-7091-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-18 10:26:17,900 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-08-18 10:26:17,901 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-1] Completed initialization in 1 ms
+2022-08-18 10:26:17,970 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-1] user data{"id":7,"first_name":"PrasannaKumar","last_name":"Acharya","email":"prasanna@gmail.com","user":null}
+2022-08-18 10:26:18,014 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-1] {"status:":"success","message:":"updated","last_name":"Acharya","oid":7,"first_name":"PrasannaKumar","email":"prasanna@gmail.com"}
+2022-08-18 10:28:58,384 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(7)-127.0.0.1] Application shutdown requested.
+2022-08-18 10:28:58,392 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [RMI TCP Connection(7)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 10:28:58,393 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(7)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2022-08-18 10:28:58,398 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(7)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2022-08-18 10:29:00,971 INFO com.techtree.messager.MessagerApplication [main] Starting MessagerApplication using Java 17.0.2 on ttblrlinsys-089 with PID 7418 (/home/prasannaacharya/git/interface/messager/target/classes started by prasannaacharya in /home/prasannaacharya/git/interface/messager)
+2022-08-18 10:29:00,973 INFO com.techtree.messager.MessagerApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-18 10:29:01,383 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-18 10:29:01,416 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 27 ms. Found 2 JPA repository interfaces.
+2022-08-18 10:29:01,761 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7091 (http)
+2022-08-18 10:29:01,768 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:29:01,768 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-18 10:29:01,768 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-18 10:29:01,843 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-18 10:29:01,843 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 839 ms
+2022-08-18 10:29:01,967 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-18 10:29:01,998 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-18 10:29:02,111 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-18 10:29:02,177 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-18 10:29:02,408 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-18 10:29:02,420 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-18 10:29:02,840 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-18 10:29:02,847 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 10:29:03,132 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-18 10:29:03,414 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:29:03,426 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7091 (http) with context path ''
+2022-08-18 10:29:03,434 INFO com.techtree.messager.MessagerApplication [main] Started MessagerApplication in 2.704 seconds (JVM running for 3.296)
+2022-08-18 10:29:08,029 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-7091-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-18 10:29:08,029 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-08-18 10:29:08,030 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-1] Completed initialization in 1 ms
+2022-08-18 10:29:08,108 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-1] user data{"id":7,"first_name":"PrasannaKumar","last_name":"Acharya","email":"prasanna@gmail.com","user":null}
+2022-08-18 10:29:08,158 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-1] {"status:":"success","message:":"updated"}
+2022-08-18 10:58:27,270 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-5] user data{"id":7,"first_name":"PrasannaKumar","last_name":"Acharya","email":"prasanna@gmail.com","user":null}
+2022-08-18 10:58:27,275 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-5] {"status:":"success","message:":"updated"}
+2022-08-18 10:58:44,294 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(33)-127.0.0.1] Application shutdown requested.
+2022-08-18 10:58:44,302 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [RMI TCP Connection(33)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 10:58:44,304 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(33)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2022-08-18 10:58:44,308 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(33)-127.0.0.1] HikariPool-1 - Shutdown completed.
+2022-08-18 10:58:46,708 INFO com.techtree.messager.MessagerApplication [main] Starting MessagerApplication using Java 17.0.2 on ttblrlinsys-089 with PID 9307 (/home/prasannaacharya/git/interface/messager/target/classes started by prasannaacharya in /home/prasannaacharya/git/interface/messager)
+2022-08-18 10:58:46,709 INFO com.techtree.messager.MessagerApplication [main] No active profile set, falling back to 1 default profile: "default"
+2022-08-18 10:58:47,142 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-18 10:58:47,178 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 29 ms. Found 2 JPA repository interfaces.
+2022-08-18 10:58:47,536 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 7091 (http)
+2022-08-18 10:58:47,549 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:58:47,550 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2022-08-18 10:58:47,550 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2022-08-18 10:58:47,624 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2022-08-18 10:58:47,624 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 882 ms
+2022-08-18 10:58:47,747 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-18 10:58:47,775 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2022-08-18 10:58:47,881 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-18 10:58:47,944 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-08-18 10:58:48,185 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-08-18 10:58:48,195 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-18 10:58:48,583 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-18 10:58:48,589 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 10:58:48,844 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-18 10:58:49,103 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-7091"]
+2022-08-18 10:58:49,114 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 7091 (http) with context path ''
+2022-08-18 10:58:49,121 INFO com.techtree.messager.MessagerApplication [main] Started MessagerApplication in 2.648 seconds (JVM running for 3.289)
+2022-08-18 10:58:54,744 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-7091-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-18 10:58:54,745 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-1] Initializing Servlet 'dispatcherServlet'
+2022-08-18 10:58:54,746 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-7091-exec-1] Completed initialization in 1 ms
+2022-08-18 10:58:54,815 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-1] user data{"id":7,"first_name":"PrasannaKumar","last_name":"Acharya","email":"prasanna@gmail.com","user":null}
+2022-08-18 10:58:54,863 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-1] {"status:":"success","message:":"updated","last_name":"Acharya","oid":7,"first_name":"PrasannaKumar","email":"prasanna@gmail.com"}
+2022-08-18 11:02:02,502 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-5] user data{"id":7,"first_name":"PrasannaKumar","last_name":"Acharya","email":"prasanna@gmail.com","user":null}
+2022-08-18 11:02:02,508 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-5] {"status:":"success","message:":"updated","last_name":"Acharya","oid":7,"first_name":"PrasannaKumar","email":"prasanna@gmail.com"}
+2022-08-18 11:03:23,298 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-8] user data{"id":7,"first_name":"PrasannaKumar","last_name":"Acharya11","email":"prasanna@gmail.com","user":null}
+2022-08-18 11:03:23,365 INFO com.techtree.messager.service.impl.serviceimpl [http-nio-7091-exec-8] {"status:":"success","message:":"updated","last_name":"Acharya11","oid":7,"first_name":"PrasannaKumar","email":"prasanna@gmail.com"}
+2022-08-18 11:10:16,509 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(15)-127.0.0.1] Application shutdown requested.
+2022-08-18 11:10:16,517 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [RMI TCP Connection(15)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-18 11:10:16,518 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(15)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2022-08-18 11:10:16,523 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(15)-127.0.0.1] HikariPool-1 - Shutdown completed.

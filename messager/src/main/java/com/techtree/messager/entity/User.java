@@ -35,7 +35,6 @@ public class User {
 	@OneToOne(cascade = CascadeType.ALL,mappedBy = "user",fetch =  FetchType.LAZY)
 	private UserProfile userprofile;
 
-	
 	public long getOid() {
 		return oid;
 	}
@@ -67,8 +66,5 @@ public class User {
 	public void setUserprofile(UserProfile userprofile) {
 		this.userprofile = userprofile;
 	}
-	
-	
-	
 
 }
